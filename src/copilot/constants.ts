@@ -10,9 +10,14 @@ import { join } from 'node:path';
  * Update this list when new models become available.
  */
 export const SUPPORTED_MODELS = [
+  'claude-sonnet-4.6',
   'claude-sonnet-4.5',
   'claude-haiku-4.5',
+  'claude-opus-4.6',
+  'claude-opus-4.6-fast',
   'claude-opus-4.5',
+  'claude-sonnet-4',
+  'gpt-5.3-codex',
   'gpt-5.1',
   'gpt-5.1-codex',
   'gpt-5.1-codex-mini',
@@ -36,30 +41,30 @@ export type ModelPreference = 'claude' | 'gpt' | 'gemini';
  */
 export const MODEL_DEFAULTS = {
   claude: {
-    ask: 'claude-sonnet-4.5',
-    explain: 'claude-haiku-4.5',
-    suggest: 'claude-opus-4.5',
-    debug: 'claude-haiku-4.5',
-    refactor: 'claude-opus-4.5',
-    review: 'gpt-4.1',
-    testGenerate: 'claude-sonnet-4.5'
+    ask: 'claude-sonnet-4.6',
+    explain: 'claude-sonnet-4.6',
+    suggest: 'claude-sonnet-4.6',
+    debug: 'claude-opus-4.6',
+    refactor: 'claude-opus-4.6',
+    review: 'claude-opus-4.6',
+    testGenerate: 'claude-opus-4.6'
   },
   gpt: {
-    ask: 'gpt-5.2-codex',
-    explain: 'gpt-5.1-codex-mini',
-    suggest: 'gpt-5.2-codex',
-    debug: 'gpt-5.1-codex-mini',
-    refactor: 'gpt-5.2',
-    review: 'gpt-4.1',
-    testGenerate: 'gpt-5.2-codex'
+    ask: 'gpt-5.3-codex',
+    explain: 'gpt-5.3-codex',
+    suggest: 'gpt-5.3-codex',
+    debug: 'gpt-5.3-codex',
+    refactor: 'gpt-5.3-codex',
+    review: 'gpt-5.3-codex',
+    testGenerate: 'gpt-5.3-codex'
   },
   gemini: {
     ask: 'gemini-3-pro-preview',
-    explain: 'claude-haiku-4.5',
+    explain: 'gemini-3-pro-preview',
     suggest: 'gemini-3-pro-preview',
-    debug: 'claude-haiku-4.5',
+    debug: 'gemini-3-pro-preview',
     refactor: 'gemini-3-pro-preview',
-    review: 'gpt-4.1',
+    review: 'gemini-3-pro-preview',
     testGenerate: 'gemini-3-pro-preview'
   }
 } as const;
